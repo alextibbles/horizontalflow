@@ -1,0 +1,22 @@
+#if !defined(ELUCIDATE__UTIL__TRACE_HPP)
+#define ELUCIDATE__UTIL__TRACE_HPP
+
+#include <glog/logging.h>
+
+#define LOG_TRACE VLOG(2)
+#define LOG_DEBUG VLOG(1)
+#define LOG_INFO LOG(INFO)
+#define LOG_WARN LOG(WARNING)
+#define LOG_ERROR LOG(ERROR)
+// glog kills the app on FATAL, so use ERROR
+#define LOG_FATAL LOG(ERROR)
+
+#define TRACE_ENABLED VLOG_IS_ON(2)
+#define DEBUG_ENABLED VLOG_IS_ON(1)
+#define INFO_ENABLED LOG_IS_ON(INFO)
+#define WARN_ENABLED LOG_IS_ON(WARNING)
+#define ERROR_ENABLED LOG_IS_ON(ERROR)
+#define FATAL_ENABLED LOG_IS_ON(FATAL)
+
+#endif
+
